@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page_title|default('Industry Days · St. Moritz 2027') }}</title>
+  {% if meta is defined and meta.description %}<meta name="description" content="{{ meta.description }}">{% endif %}
+  {% if meta is defined and meta.canonical %}<link rel="canonical" href="{{ meta.canonical }}">{% endif %}
+  <link rel="stylesheet" href="{{ asset_url('style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  {% block content %}{% endblock %}
+</body>
+</html>

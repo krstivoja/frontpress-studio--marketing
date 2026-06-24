@@ -1,0 +1,105 @@
+<!-- ──────────────── 12 FOOTER ──────────────── -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div style="display:flex; align-items:flex-start; gap:20px;">
+          <span class="id-logo__mark" style="--id-size:64px; color:var(--paper); border-width:1.5px; flex:0 0 auto;"></span>
+          <h4 class="wordmark" style="margin:-4px 0 0;">Industry<br>Days</h4>
+        </div>
+        <div class="endorse">
+          <span>an event by</span>
+          <img src="/uploads/cfc-logo-white.png" alt="CfC St. Moritz" style="height:56px;">
+        </div>
+        <p>
+          The Industry Days are an independent, curated event format on DeepTech and corporate adoption. Three days, focused themes across AI, agents, quantum, cyber security and blockchain. No hype, just real world application. The format brings together corporates, technology providers, ventures, infrastructure players and policy representatives in St. Moritz.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h6>Programme</h6>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#editions">Past editions</a></li>
+          <li><a href="#deeptech">DeepTech focus</a></li>
+          <li><a href="#format">Format</a></li>
+          <li><a href="#audience">Audience</a></li>
+          <li><a href="#venue">Venue</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h6>Participate</h6>
+        <ul>
+          <li><a href="#apply">Request invitation</a></li>
+          <li><a href="#apply">Submit speaker proposal</a></li>
+          <li><a href="#partners">Become a partner</a></li>
+          <li><a href="mailto:hello@industrydays.events">hello@industrydays.events</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h6>Cross link</h6>
+        <ul>
+          <li><a href="https://cfc-stmoritz.com">CfC St. Moritz</a></li>
+          <li><a href="https://cfc-stmoritz.com">Investor Conference</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">X / Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="left">
+        <span>industrydays.events</span>
+        <span style="opacity:0.4;">·</span>
+        <span>© 2026 CfC St. Moritz AG</span>
+      </div>
+      <div class="right">
+        <a href="#">Imprint</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu toggle
+const menuToggle = document.querySelector('.nav__menu-toggle');
+const navLinks = document.querySelector('.nav__links');
+
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when clicking a link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('active');
+    }
+  });
+}
+
+// Smooth scroll for in-page anchors
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener('click', (e) => {
+    const id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    const y = el.getBoundingClientRect().top + window.scrollY - 64;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
+});
+</script>

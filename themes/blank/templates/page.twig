@@ -1,0 +1,18 @@
+{% extends '_layout.twig' %}
+{% set page_title = meta.title|default('Page') %}
+
+{% block content %}
+<article>
+  <h3 style="font-size:5rem;">{{ meta.title}}</h3>
+  {{ html|raw }}
+</article>
+
+
+<h1>{{ meta.title|default('') }}</h1>
+<p class="excerpt">{{ meta.excerpt|default('') }}</p>
+<img src="{{ meta.image }}" alt="{{ meta.title|default('') }}">
+
+{% endblock %}
+
+
+
